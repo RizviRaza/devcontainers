@@ -10,3 +10,11 @@ Following containers are pushed to this repo:
 - Access to host NVidia GPU and libs
 - Access to host Display
 - DDS configuration
+
+## 2. ros2_nvidia_yolo_training_devcontainer
+
+- ROS2 Humble & relevant tools
+- Access to host NVidia GPU and libs
+- Access to host Display
+- DDS configuration
+- All Yolo training tools
