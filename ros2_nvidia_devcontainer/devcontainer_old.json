@@ -1,0 +1,30 @@
+{
+  "name": "ROS2 Workspace DevContainer",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "extensions": [
+    "ms-iot.vscode-ros",
+    "ms-vscode.cpptools",
+    "ms-azuretools.vscode-docker",
+    "ms-vscode.cmake-tools"
+  ],
+  "remoteUser": "root",
+  "workspaceFolder": "/ros2_ws",
+  "postCreateCommand": "/bin/bash /ros2_ws/.devcontainer/postCreateSetup.sh",
+  "runArgs": [
+    "--network", "host",
+    "--env", "DISPLAY=${env:DISPLAY}",
+    "--volume", "/tmp/.X11-unix:/tmp/.X11-unix",
+    "--gpus=all",
+    "--env", "NVIDIA_VISIBLE_DEVICES=all",
+    "--env", "NVIDIA_DRIVER_CAPABILITIES=compute,utility,video,graphics"
+],
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/ros2_ws,type=bind,consistency=cached"
+  ]
+}
